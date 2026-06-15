@@ -11,19 +11,20 @@ st.markdown(
     """
     <style>
     :root {
-        --panel: rgba(9, 18, 31, 0.78);
-        --panel-2: rgba(15, 28, 47, 0.82);
-        --text: #ecf4ff;
-        --muted: #a7bbd8;
-        --accent: #52d6c5;
-        --border: rgba(255,255,255,0.1);
+        --panel: rgba(7, 16, 29, 0.82);
+        --panel-2: rgba(13, 28, 50, 0.86);
+        --text: #eff6ff;
+        --muted: #b8c7de;
+        --accent: #5eead4;
+        --accent-2: #f59e0b;
+        --border: rgba(255,255,255,0.12);
     }
 
     .stApp {
         background:
-            radial-gradient(circle at top left, rgba(82, 214, 197, 0.18), transparent 28%),
-            radial-gradient(circle at top right, rgba(124, 156, 255, 0.16), transparent 30%),
-            linear-gradient(180deg, #06101d 0%, #0d1a2e 100%);
+            radial-gradient(circle at top left, rgba(94, 234, 212, 0.18), transparent 28%),
+            radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 30%),
+            linear-gradient(180deg, #04111f 0%, #0b1b31 100%);
         color: var(--text);
     }
 
@@ -31,15 +32,17 @@ st.markdown(
         padding: 2rem;
         border-radius: 28px;
         border: 1px solid var(--border);
-        background: linear-gradient(180deg, var(--panel), var(--panel-2));
-        box-shadow: 0 30px 90px rgba(0,0,0,0.28);
+        background:
+            linear-gradient(180deg, var(--panel), var(--panel-2)),
+            linear-gradient(135deg, rgba(94, 234, 212, 0.08), rgba(245, 158, 11, 0.08));
+        box-shadow: 0 30px 90px rgba(0,0,0,0.32);
     }
 
     .assistant-kicker {
         display: inline-block;
         padding: 0.35rem 0.8rem;
         border-radius: 999px;
-        background: rgba(82, 214, 197, 0.14);
+        background: rgba(94, 234, 212, 0.14);
         color: var(--accent);
         font-size: 0.84rem;
         font-weight: 700;
@@ -62,13 +65,33 @@ st.markdown(
         padding: 0.9rem 1rem;
         border-radius: 18px;
         border: 1px solid var(--border);
-        background: rgba(255,255,255,0.05);
+        background: rgba(255,255,255,0.06);
         color: var(--text);
     }
 
     .assistant-note {
         margin-top: 0.75rem;
         color: var(--muted);
+    }
+
+    a[data-testid="stLinkButton"] {
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: linear-gradient(135deg, rgba(94, 234, 212, 0.14), rgba(245, 158, 11, 0.14));
+        color: var(--text);
+    }
+
+    a[data-testid="stLinkButton"]:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255,255,255,0.2);
+    }
+
+    div[data-testid="stChatMessage"] {
+        border-radius: 18px;
+    }
+
+    div[data-testid="stChatMessage"] p {
+        color: var(--text);
     }
     </style>
     """,

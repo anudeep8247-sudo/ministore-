@@ -11,20 +11,21 @@ st.markdown("""
 <style>
 
 :root {
-    --bg: #f5f7ff;
-    --card: rgba(255, 255, 255, 0.82);
-    --text: #10233f;
-    --muted: #56657f;
+    --bg: #f6efe6;
+    --card: rgba(255, 252, 247, 0.88);
+    --text: #14213d;
+    --muted: #667085;
     --accent: #0f766e;
-    --accent-2: #2563eb;
-    --border: rgba(16, 35, 63, 0.08);
+    --accent-2: #c0562b;
+    --accent-3: #1d4ed8;
+    --border: rgba(20, 33, 61, 0.08);
 }
 
 body {
     background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 32%),
-        radial-gradient(circle at top right, rgba(15, 118, 110, 0.12), transparent 28%),
-        linear-gradient(180deg, #f7f9ff 0%, #eef4ff 100%);
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(192, 86, 43, 0.14), transparent 28%),
+        linear-gradient(180deg, #fffaf4 0%, #f2e9dd 100%);
     color: var(--text);
 }
 
@@ -36,15 +37,17 @@ body {
     padding: 2rem 2.2rem;
     border: 1px solid var(--border);
     border-radius: 28px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(240,245,255,0.78));
-    box-shadow: 0 24px 80px rgba(16, 35, 63, 0.08);
+    background:
+        linear-gradient(135deg, rgba(255, 252, 247, 0.94), rgba(249, 244, 236, 0.84)),
+        linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(192, 86, 43, 0.08));
+    box-shadow: 0 24px 80px rgba(20, 33, 61, 0.08);
 }
 
 .hero-kicker {
     display: inline-block;
     padding: 0.35rem 0.8rem;
     border-radius: 999px;
-    background: rgba(15, 118, 110, 0.12);
+    background: rgba(15, 118, 110, 0.14);
     color: var(--accent);
     font-size: 0.85rem;
     font-weight: 700;
@@ -71,7 +74,7 @@ body {
     background: var(--card);
     border-radius: 22px;
     padding: 1rem 1.1rem;
-    box-shadow: 0 14px 40px rgba(16, 35, 63, 0.05);
+    box-shadow: 0 14px 40px rgba(20, 33, 61, 0.05);
 }
 
 .metric-value {
@@ -90,7 +93,7 @@ body {
     position: fixed;
     bottom: 28px;
     right: 28px;
-    background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
     color: white !important;
     padding: 14px 20px;
     border-radius: 999px;
@@ -103,7 +106,7 @@ body {
 
 .support-button:hover {
     transform: translateY(-1px);
-    filter: brightness(1.02);
+    filter: brightness(1.06);
 }
 
 .product-card {
@@ -111,8 +114,20 @@ body {
     border: 1px solid var(--border);
     padding: 1.25rem;
     border-radius: 22px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,248,255,0.92));
-    box-shadow: 0 14px 40px rgba(16, 35, 63, 0.06);
+    background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(249, 244, 236, 0.92));
+    box-shadow: 0 14px 40px rgba(20, 33, 61, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
 
 .product-card h3 {
@@ -122,6 +137,18 @@ body {
 
 .product-card p {
     color: var(--muted);
+}
+
+a[data-testid="stLinkButton"] {
+    border-radius: 999px;
+    border: 1px solid rgba(20, 33, 61, 0.12);
+    background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(192, 86, 43, 0.08));
+    color: var(--text);
+}
+
+a[data-testid="stLinkButton"]:hover {
+    border-color: rgba(20, 33, 61, 0.18);
+    transform: translateY(-1px);
 }
 
 </style>
